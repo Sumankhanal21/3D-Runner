@@ -16,13 +16,19 @@ public class CharacterScript : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * speed, Space.World);
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (this.gameObject.transform.position.x > BoundaryScript.leftside)
         {
-            transform.Translate(Vector3.left * Time.deltaTime * leftright, Space.World);
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                transform.Translate(Vector3.left * Time.deltaTime * leftright, Space.World);
+            }
         }
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (this.gameObject.transform.position.x < BoundaryScript.rightside)
         {
-            transform.Translate(Vector3.right * Time.deltaTime * leftright, Space.World);
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                transform.Translate(Vector3.right * Time.deltaTime * leftright, Space.World);
+            }
         }
 
         /*   if (Input.GetKeyDown(KeyCode.Space))
