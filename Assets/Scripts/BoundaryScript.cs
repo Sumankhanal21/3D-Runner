@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class BoundaryScript : MonoBehaviour
 {
-    public static float leftside = 5.4f;
-    public static float rightside = 18.1f;
+    public static float leftside = 6.0f;
+    public static float rightside = 19.8f;
     public float left;
     public float right;
-    void Start()
+  
+    
+    public void Start()
     {
+
         left = leftside;
         right = rightside;
+        
     }
 
 

@@ -7,9 +7,11 @@ public class CharacterScripts : MonoBehaviour
     public Animator jumpani;
     public float speed = 3f;
     public float leftright = 4f;
+   
     void Start()
     {
         jumpani = gameObject.GetComponent<Animator>();
+       
     }
 
     // Update is called once per frame
@@ -32,4 +34,5 @@ public class CharacterScripts : MonoBehaviour
         }
 
     }
+   
 }
