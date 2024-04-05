@@ -7,9 +7,13 @@ public class coinUI : MonoBehaviour
 {
    
   public static  int coinCount;
+   
+   
     public GameObject dispaly;
     void Update()
     {
+       
         dispaly.GetComponent< Text > ().text = "" + coinCount;
+        
     }
 }
