@@ -10,19 +10,24 @@ public class DistanceScript : MonoBehaviour
     public bool addingDis = false;
     public float diaplay = 0.35f;
 
-    void Update()
+    void Start()
     {
-        if (addingDis == false)
-        {
-            addingDis = true;
-          //  StartCoroutine(addingDis());
-        }
+        StartCoroutine(AddingDis());
     }
-    IEnumerator addingdis()
+
+    IEnumerator AddingDis()
     {
-        disrun = +1;
-        disDisplay.GetComponent<Text>().text = "" + disrun;
-        yield return new WaitForSeconds(diaplay);
-        addingDis = false;
+        while (true)
+        {
+            if (!addingDis)
+            {
+                addingDis = true;
+                disrun += 1;
+                disDisplay.GetComponent<Text>().text = disrun.ToString();
+                yield return new WaitForSeconds(diaplay);
+                addingDis = false;
+            }
+            yield return null;
+        }
     }
 }
