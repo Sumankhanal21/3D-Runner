@@ -5,6 +5,7 @@ using UnityEngine;
 public class CoinScript : MonoBehaviour
 {
     public int rotate = 2;
+   
     void Update()
     {
         transform.Rotate(0, rotate, 0, Space.World);
@@ -13,6 +14,7 @@ public class CoinScript : MonoBehaviour
     {
         coinUI.coinCount += 1;
         if (other.tag == "Player") {
+
             Destroy(gameObject);
         }
     }
